@@ -4,31 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>YO!!</h1>
-    <!-- Tab links -->
-    <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+    <h1>Math Game (Lingo but numbers)</h1>
+    <p>Always round! n = the top number, m = the bottom number, and k = the answer (used in some descriptions).</p>
+    <h3 id="score">Score: </h3>
+    <p id="desctxt"></p>
+    <div id="box">
+        <p id="num"></p>
+        <p id="mod"></p>
     </div>
-    
-    <!-- Tab content -->
-    <div id="London" class="tabcontent">
-        <h3>London</h3>
-        <p>London is the capital city of England.</p>
-    </div>
-    
-    <div id="Paris" class="tabcontent">
-        <h3>Paris</h3>
-        <p>Paris is the capital of France.</p>
-    </div>
-    
-    <div id="Tokyo" class="tabcontent">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
-    </div>
+    <br>
+    <input id="input" type="text">
+    <button id="submit" type="button">Submit</button>
     <script src="script.js"></script>
 </body>
 </html>
