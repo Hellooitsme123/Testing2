@@ -1,0 +1,153 @@
+* {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
+.level-link {
+  cursor: pointer;
+}
+
+.level-link-disabled {
+  color: #393939;
+  font-weight: bold;
+}
+
+.normal-box {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.normal-box > .sub-box {
+  width: 85px;
+  height: 85px;
+  max-width: 85px;
+  max-height: 85px;
+  background: rgb(50, 50, 50);
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  display: table;
+  font-weight: bolder;
+  word-break: break-all;
+  text-wrap: pretty;
+}
+.normal-box > .sub-box > * {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.box-black {
+  background: rgb(0, 0, 0);
+}
+.box-red {
+  background: rgb(171, 0, 0);
+}
+.box-brown {
+  background: rgb(103, 77, 35);
+}
+.box-orange {
+  background: rgb(255, 127, 0);
+}
+.box-cream {
+  background: rgb(205, 209, 146);
+}
+.box-yellow {
+  background: rgb(255, 255, 0);
+}
+.box-lime {
+  background: rgb(20, 255, 0);
+}
+.box-green {
+  background: rgb(11, 143, 11);
+}
+.box-mint {
+  background: rgb(100, 200, 148);
+}
+.box-cyan {
+  background: rgb(84, 235, 255);
+}
+.box-blue {
+  background: rgb(29, 41, 207);
+}
+.box-navy {
+  background: rgb(25, 10, 100);
+  font-size: 12px;
+}
+.box-purple {
+  background: rgb(100, 20, 120);
+}
+.box-magenta {
+  background: rgb(255, 0, 255);
+}
+.box-lavender {
+  background: rgb(186, 114, 181);
+}
+.box-gray {
+  background: rgb(100, 100, 100);
+}
+.box-white {
+  background: rgb(210, 210, 210);
+}
+.box-chroma {
+  background: linear-gradient(45deg, rgb(171, 0, 0), rgb(255, 127, 0), rgb(255, 255, 0), rgb(20, 255, 0), rgb(29, 41, 207), rgb(100, 20, 120), rgb(255, 0, 255));
+}
+
+.box-half-blue-black {
+  background: linear-gradient(90deg, rgb(29, 41, 207) 50%, rgb(0, 0, 0) 50%);
+}
+
+.box-checker-blue-black {
+  background: repeating-conic-gradient(rgb(0, 0, 0) 0% 25%, rgb(29, 41, 207) 0% 50%) 50%/100px 100px;
+}
+.box-checker-black-blue {
+  background: repeating-conic-gradient(rgb(29, 41, 207) 0% 25%, rgb(0, 0, 0) 0% 50%) 50%/100px 100px;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+  border: 1.5px solid black;
+}
+
+input {
+  font-size: 18px;
+}
+
+.omega-text {
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(190, 190, 190);
+  border: 2px solid black;
+  box-shadow: 0px 0px 5px 5px rgb(100, 100, 100);
+  border-radius: 15px;
+  z-index: 1000;
+  text-align: center;
+}
+.omega-text > p {
+  font-size: 80px;
+  font-weight: bolder;
+  color: white;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 2px;
+}
+.omega-text > button {
+  font-size: 30px;
+  width: 30%;
+  height: 20%;
+  background: maroon;
+  color: white;
+  font-weight: bolder;
+  border-radius: 15px;
+  border: 3px solid black;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

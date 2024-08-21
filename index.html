@@ -1,23 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css" />
 </head>
+
 <body>
-    <h1>Math Game (Lingo but numbers)</h1>
-    <p>Always round! n = the top number, m = the bottom number, and k = the answer (used in some descriptions).</p>
-    <h3 id="score">Score: </h3>
-    <p id="desctxt"></p>
-    <div id="box">
-        <p id="num"></p>
-        <p id="mod"></p>
+    <h1>LINGO LAND</h1>
+    <div id="level-select">
+        <h3>Choose Your Level: </h3>
+        <p class="level-link" data-level="The Novice">0. The ???</p>
+        <p class="level-link" data-level="The Colossal">1. The ???</p>
+        <p class="level-link" data-level="The Firebrand">2. The ???</p>
+        <p class="level-link-disabled" data-level="20">20. The ???</p>
     </div>
-    <br>
-    <input id="input" type="text">
-    <button id="submit" type="button">Submit</button>
-    <script src="script.js"></script>
+    <div id="problems" class="hide">
+        <p id="event-p"></p>
+        <table id="target-div">
+            <tr>
+                <td id="0:0"></td>
+                <td id="1:0"></td>
+                <td id="2:0"></td>
+            </tr>
+            <tr>
+                <td id="0:1"></td>
+                <td id="1:1"></td>
+                <td id="2:1"></td>
+            </tr>
+            <tr>
+                <td id="0:2"></td>
+                <td id="1:2"></td>
+                <td id="2:2"></td>
+            </tr>
+        </table>
+        <input type="text" id="answer" value="" oninput="checkInput()">
+        <button type="button" id="submit">Submit</button>
+        <button type="button" id="hint">Hint</button>
+        <br>
+        <button type="button" id="back" class="hide">Back</button>
+        <button type="button" id="next" class="hide">Next</button>
+    </div>
+    
+    <!--<div class="normal-box box-blue">
+        <div class="sub-box">
+            <p>hi</p>
+        </div>
+    </div>-->
+    <div class="omega-text hide" id="omega-text">
+        <p id="omega-p">THE NOVICE</p>
+        <button type="button" id="exit-omega">Exit</button>
+    </div>
+    <script src="puzzle.js"></script>
+    <script src="script.js" defer></script>
 </body>
+
 </html>

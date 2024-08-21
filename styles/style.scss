@@ -1,0 +1,187 @@
+
+$black-box: rgb(0, 0, 0);
+$red-box: rgb(171, 0, 0);
+$brown-box: rgb(103, 77, 35);
+$orange-box: rgb(255,127,0);
+$cream-box: rgb(205, 209, 146);
+$yellow-box: rgb(255,255,0);
+$lime-box: rgb(20, 255, 0);
+$green-box: rgb(11, 143, 11);
+$mint-box: rgb(100, 200, 148);
+$cyan-box: rgb(84, 235, 255);
+$blue-box: rgb(29, 41, 207);
+$navy-box: rgb(25, 10, 100);
+$purple-box: rgb(100, 20, 120);
+$magenta-box: rgb(255,0,255);
+$lavender-box: rgb(186, 114, 181);
+$gray-box: rgb(100,100,100);
+$white-box: rgb(210,210,210);
+$chroma-box: linear-gradient(45deg,$red-box,$orange-box,$yellow-box,$lime-box,$blue-box,$purple-box,$magenta-box);
+
+* {
+	font-family: 'Trebuchet MS', sans-serif;
+}
+
+@mixin half-block($color1, $color2) {
+	background: linear-gradient(90deg, $color1 50%, $color2 50%);
+}
+
+@mixin checker-block($color1, $color2) {
+	background: repeating-conic-gradient($color2 0% 25%, $color1 0% 50%) 
+	50% / 100px 100px;
+}
+
+.hide {
+	display: none;
+}
+
+.level-link {
+	cursor: pointer;
+}
+
+.level-link-disabled {
+	color: #393939;
+	font-weight: bold;
+}
+
+.normal-box {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	&>.sub-box {
+		width: 85px;
+		height: 85px;
+		max-width: 85px;
+		max-height: 85px;
+		background: rgb(50, 50, 50);
+		color: white;
+		vertical-align: middle;
+		text-align: center;
+		display: table;
+		font-weight: bolder;
+		word-break: break-all;
+		text-wrap:pretty;
+
+		&>* {
+			vertical-align: middle;
+			display: table-cell;
+		}
+	}
+}
+
+.box {
+	&-black {
+		background: $black-box;
+	}
+	&-red {
+		background: $red-box;
+	}
+	&-brown {
+		background: $brown-box;
+	}
+	&-orange {
+		background: $orange-box;
+	}
+	&-cream {
+		background: $cream-box;
+	}
+	&-yellow {
+		background: $yellow-box;
+	}
+	&-lime {
+		background: $lime-box;
+	}
+	&-green {
+		background: $green-box;
+	}
+	&-mint {
+		background: $mint-box;
+	}
+	&-cyan {
+		background: $cyan-box;
+	}
+	&-blue {
+		background: $blue-box;
+	}
+	&-navy {
+		background: $navy-box;
+		font-size: 12px;
+	}
+	&-purple {
+		background: $purple-box;
+	}
+	&-magenta {
+		background: $magenta-box;
+	}
+	&-lavender {
+		background: $lavender-box;
+	}
+	&-gray {
+		background: $gray-box;
+	}
+	&-white {
+		background:$white-box;
+	}
+	&-chroma {
+		background:$chroma-box;
+	}
+}
+
+.box-half {
+	&-blue-black {
+		@include half-block($blue-box, $black-box);
+	}
+}
+
+.box-checker {
+	&-blue-black {
+		@include checker-block($blue-box, $black-box );
+	}
+	&-black-blue {
+		@include checker-block($black-box,$blue-box);
+	}
+}
+td {
+	width: 100px;
+	height: 100px;
+	border: 1.5px solid black;
+}
+input {
+	font-size: 18px;
+}
+.omega-text {
+	width: 70%;
+	height: 70%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: rgb(190,190,190);
+	border: 2px solid black;
+	box-shadow: 0px 0px 5px 5px rgb(100,100,100);
+	border-radius: 15px;
+	z-index: 1000;
+	text-align: center;
+	& > p {
+		font-size: 80px;
+		font-weight: bolder;
+		color: white;
+		-webkit-text-stroke-color: black;
+		-webkit-text-stroke-width: 2px;
+	}
+	& > button {
+		font-size: 30px;
+		width: 30%;
+		height: 20%;
+		background: maroon;
+		color: white;
+		font-weight: bolder;
+		border-radius: 15px;
+		border: 3px solid black;
+		cursor: pointer;
+	}
+}
