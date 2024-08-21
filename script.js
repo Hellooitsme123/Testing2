@@ -160,7 +160,7 @@ function checkInput() {
 };
 submitBtn.addEventListener("click", function () {
 	curvalue = submitInput.value;
-	if (curvalue == currentAnswer) {
+	if (curvalue.toLowerCase() == currentAnswer) {
 		eventP.innerHTML = "<b style='color:green;'>Correct Answer!</b>";
 		completedCode = currentSection + ":" + currentProblem;
 		if (completed.includes(completedCode) == false) {
