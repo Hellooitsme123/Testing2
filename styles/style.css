@@ -51,6 +51,9 @@
 .box-brown {
   background: rgb(103, 77, 35);
 }
+.box-vermillion {
+  background: rgb(227, 66, 52);
+}
 .box-orange {
   background: rgb(255, 127, 0);
 }
@@ -71,6 +74,9 @@
 }
 .box-cyan {
   background: rgb(84, 235, 255);
+}
+.box-periwinkle {
+  background: rgb(133, 151, 255);
 }
 .box-blue {
   background: rgb(29, 41, 207);
@@ -150,4 +156,44 @@ input {
   border-radius: 15px;
   border: 3px solid black;
   cursor: pointer;
+}
+
+.b {
+  font-weight: bolder;
+}
+
+.b {
+  font-weight: bolder;
+}
+
+
+#level-select {
+  height: 300px;
+  width: 400px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(200, 200, 200);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(102, 102, 102, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #393939;
+}
+
+.mini-box {
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  border: 2px solid black !important;
+  margin-right: 2px;
 }/*# sourceMappingURL=style.css.map */

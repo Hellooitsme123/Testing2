@@ -23,6 +23,7 @@ var submitInput = document.getElementById('answer');
 var backBtn = document.getElementById('back');
 var nextBtn = document.getElementById('next');
 var hintBtn = document.getElementById('hint');
+var problemP = byId("curProblem");
 var eventP = byId("event-p");
 var omegaDiv = byId("omega-text");
 var omegaP = byId("omega-p");
@@ -41,6 +42,18 @@ var completedSections = [];
 var nextAvailable = false;
 
 function genAnswer(section, problem) {
+	currentCode = currentSection + ":" + (currentProblem);
+	console.log(currentCode);
+	if (completed.includes(currentCode)) {
+		nextBtn.classList.remove("hide");
+	} else {
+		nextBtn.classList.add("hide");
+	}
+	if (currentProblem > 1) {
+		backBtn.classList.remove("hide");
+	} else {
+		backBtn.classList.add("hide");
+	}
 	if (boxes) {
 		currentAnswer = "";
 		boxes.forEach(function (item) {
@@ -158,6 +171,11 @@ function checkInput() {
 	submitInput.setSelectionRange(cursorPosition, cursorPosition);
 
 };
+submitInput.addEventListener("click", function() {
+	if (submitInput.value == inputFill) {
+		submitInput.setSelectionRange(0, 0);
+	}
+})
 submitBtn.addEventListener("click", function () {
 	curvalue = submitInput.value;
 	if (curvalue.toLowerCase() == currentAnswer) {
@@ -177,6 +195,7 @@ backBtn.addEventListener("click", function() {
 		currentProblem -= 1;
 		nextBtn.classList.remove("hide");
 		genAnswer(Object.keys(puzzles)[currentSection], currentProblem);
+		problemP.innerHTML = "Problem "+currentProblem;
 		if (currentProblem == 1) {
 			backBtn.classList.add("hide");
 		}
@@ -192,7 +211,7 @@ nextBtn.addEventListener("click", function() {
 			omegaDiv.classList.remove("hide");
 			omegaP.innerHTML = Object.keys(puzzles)[currentSection].toUpperCase();
 			document.querySelectorAll("[data-level='"+Object.keys(puzzles)[currentSection]+"']").forEach(function(element) {
-				element.innerHTML = currentSection + ". " + Object.keys(puzzles)[currentSection];
+				element.innerHTML = element.innerHTML.replace("The ???",Object.keys(puzzles)[currentSection]);
 			});
 			if (completedSections.includes(currentSection) == false) {
 				completedSections.push(currentSection);
@@ -204,13 +223,8 @@ nextBtn.addEventListener("click", function() {
 			nextBtn.classList.add("hide");
 			
 		} else {
+			problemP.innerHTML = "Problem "+currentProblem;
 			genAnswer(Object.keys(puzzles)[currentSection], currentProblem);
-			completedCode2 = currentSection + ":" + (currentProblem);
-			if (completed.includes(completedCode2) == false) {
-				nextBtn.classList.add("hide");
-			} else {
-				nextBtn.classList.remove("hide");
-			}
 		}
 		
 	}
@@ -226,17 +240,21 @@ document.querySelectorAll(".level-link").forEach((element) => {
 	element.addEventListener("click", () => {
 		level = element.getAttribute("data-level");
 		byId("problems").classList.remove("hide");
+		currentProblem = 1;
 		if (isNaN(level)) {
-			genAnswer(level,1);
 			for (let i = 0; i < Object.keys(puzzles).length; i++) {
 				if (Object.keys(puzzles)[i] == level) {
 					currentSection = i;
 				}
 			}
+			genAnswer(level,1);
+			
 		} else {
-			genAnswer(Object.keys(puzzles)[Number(level)],1);
 			currentSection = level;
+			genAnswer(Object.keys(puzzles)[Number(level)],1);
+			
 		}
+		problemP.innerHTML = "Problem 1";
 		backBtn.classList.add("hide");
 		
 	});

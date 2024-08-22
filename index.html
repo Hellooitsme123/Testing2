@@ -12,12 +12,18 @@
     <h1>LINGO LAND</h1>
     <div id="level-select">
         <h3>Choose Your Level: </h3>
-        <p class="level-link" data-level="The Novice">0. The ???</p>
-        <p class="level-link" data-level="The Colossal">1. The ???</p>
-        <p class="level-link" data-level="The Firebrand">2. The ???</p>
-        <p class="level-link-disabled" data-level="20">20. The ???</p>
+        <p class="level-link" data-level="The Novice">0. White Room | The ??? <span class="mini-box box-white"></span></p>
+        <p class="level-link" data-level="The Colossal">1. Blue Room | The ??? <span class="mini-box box-blue"></span></p>
+        <p class="level-link" data-level="The Firebrand">2. Red Room | The ??? <span class="mini-box box-red"></span></p>
+        <p class="level-link" data-level="The Primary">3. Miscellaneous | The ??? <span class="mini-box box-white"></span><span class="mini-box box-blue"></span><span class="mini-box box-red"></span> </p>
+        <p class="level-link" data-level="The Incremental">4. Number Room | The ??? <span class="mini-box box-white"></span><span class="mini-box box-black"></span></p>
+        <p class="level-link" data-level="The Radiant">5. You Are | The ??? <span class="mini-box box-vermillion"></span><span class="mini-box box-periwinkle"></span><span class="mini-box box-black"></span></p>
+        <p class="level-link" data-level="The Illusive">6. Yellow Room | The ??? <span class="mini-box box-yellow"></span></p>
+        <p class="level-link-disabled" data-level="The Surreal">-1. The ???</p>
+        <p class="level-link-disabled" data-level="The Transparent">-2. The ???</p>
     </div>
     <div id="problems" class="hide">
+        <p id="curProblem"></p>
         <p id="event-p"></p>
         <table id="target-div">
             <tr>
@@ -36,7 +42,7 @@
                 <td id="2:2"></td>
             </tr>
         </table>
-        <input type="text" id="answer" value="" oninput="checkInput()">
+        <input type="text" id="answer" value="" oninput="checkInput()" autocomplete="off">
         <button type="button" id="submit">Submit</button>
         <button type="button" id="hint">Hint</button>
         <br>
