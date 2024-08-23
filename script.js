@@ -63,6 +63,23 @@ function genAnswer(section, problem) {
 			item.remove();
 		});
 	}
+	// TABLE RESET
+	let table = byId("target-div");
+	while (table.firstChild) {
+		table.removeChild(table.lastChild);
+	}
+	zelen = 3;
+	zeheight = 3;
+	for (let i = 0; i < zeheight; i++) {
+		zerow = document.createElement("tr");
+		for (let j = 0; j < zelen; j++) {
+			zetd = document.createElement("td");
+			zetd.setAttribute("id", j + ":" + i);
+			zerow.appendChild(zetd);
+		}
+		table.appendChild(zerow);
+	}
+	// END TABLE RESET
 
 	given = puzzles[section]["problem" + problem];
 	givensplit = given.split("||");
@@ -84,11 +101,11 @@ function genAnswer(section, problem) {
 				zelen = args2[1];
 				zeheight = args1[1];
 			}
-			for (let i =0; i < zeheight; i++) {
+			for (let i = 0; i < zeheight; i++) {
 				zerow = document.createElement("tr");
 				for (let j = 0; j < zelen; j++) {
 					zetd = document.createElement("td");
-					zetd.setAttribute("id",i+":"+j);
+					zetd.setAttribute("id", i + ":" + j);
 					zerow.appendChild(zetd);
 				}
 				table.appendChild(zerow);
@@ -102,11 +119,16 @@ function genAnswer(section, problem) {
 			para = document.createElement("p");
 			zeattributes = splitTwo(item, "[", "]").split(",");
 			position = "";
+			speciallist = [];
 			zeattributes.forEach(function (item2) {
 				arg1 = item2.split("=")[0];
 				arg2 = item2.split("=")[1];
 				if (arg1 == "class") {
 					box.classList.add(splitTwo(arg2, "'", "'"));
+					console.log(arg2);
+					if (splitTwo(arg2, "'", "'") == "box-large") {
+						speciallist.push('box-large');
+					}
 				}
 				if (arg1 == "given") {
 					para.innerHTML = splitTwo(arg2, "'", "'");
@@ -118,6 +140,10 @@ function genAnswer(section, problem) {
 					position = splitTwo(arg2, "'", "'");
 				}
 			});
+			if (speciallist.includes("box-large")) {
+				byId(position).setAttribute("colspan", 2);
+				byId(position).setAttribute("rowspan", 2);
+			}
 			byId(position).appendChild(box);
 			box.appendChild(sub_box);
 			sub_box.appendChild(para);
@@ -171,7 +197,7 @@ function checkInput() {
 	submitInput.setSelectionRange(cursorPosition, cursorPosition);
 
 };
-submitInput.addEventListener("click", function() {
+submitInput.addEventListener("click", function () {
 	if (submitInput.value == inputFill) {
 		submitInput.setSelectionRange(0, 0);
 	}
@@ -190,19 +216,19 @@ submitBtn.addEventListener("click", function () {
 	}
 	setTimeout(clearP, 2000);
 });
-backBtn.addEventListener("click", function() {
+backBtn.addEventListener("click", function () {
 	if (currentProblem > 1) {
 		currentProblem -= 1;
 		nextBtn.classList.remove("hide");
 		genAnswer(Object.keys(puzzles)[currentSection], currentProblem);
-		problemP.innerHTML = "Problem "+currentProblem;
+		problemP.innerHTML = "Problem " + currentProblem;
 		if (currentProblem == 1) {
 			backBtn.classList.add("hide");
 		}
 	}
 });
-nextBtn.addEventListener("click", function() {
-	next = puzzles[Object.keys(puzzles)[currentSection]]["problem"+(currentProblem+1)];
+nextBtn.addEventListener("click", function () {
+	next = puzzles[Object.keys(puzzles)[currentSection]]["problem" + (currentProblem + 1)];
 	completedCode = currentSection + ":" + (currentProblem);
 	if (completed.includes(completedCode)) {
 		currentProblem += 1;
@@ -210,8 +236,8 @@ nextBtn.addEventListener("click", function() {
 		if (currentProblem - 1 == Object.keys(puzzles[Object.keys(puzzles)[currentSection]]).length) {
 			omegaDiv.classList.remove("hide");
 			omegaP.innerHTML = Object.keys(puzzles)[currentSection].toUpperCase();
-			document.querySelectorAll("[data-level='"+Object.keys(puzzles)[currentSection]+"']").forEach(function(element) {
-				element.innerHTML = element.innerHTML.replace("The ???",Object.keys(puzzles)[currentSection]);
+			document.querySelectorAll("[data-level='" + Object.keys(puzzles)[currentSection] + "']").forEach(function (element) {
+				element.innerHTML = element.innerHTML.replace("The ???", Object.keys(puzzles)[currentSection]);
 			});
 			if (completedSections.includes(currentSection) == false) {
 				completedSections.push(currentSection);
@@ -221,20 +247,20 @@ nextBtn.addEventListener("click", function() {
 			byId("problems").classList.add("hide");
 			backBtn.classList.add("hide");
 			nextBtn.classList.add("hide");
-			
+
 		} else {
-			problemP.innerHTML = "Problem "+currentProblem;
+			problemP.innerHTML = "Problem " + currentProblem;
 			genAnswer(Object.keys(puzzles)[currentSection], currentProblem);
 		}
-		
+
 	}
 });
-hintBtn.addEventListener("click", function() {
+hintBtn.addEventListener("click", function () {
 	if (inputFill.charAt(0) == "-") {
 		inputFill = currentAnswer.charAt(0) + inputFill.substring(1);
 	}
 	submitInput.value = inputFill;
-	
+
 });
 document.querySelectorAll(".level-link").forEach((element) => {
 	element.addEventListener("click", () => {
@@ -247,16 +273,16 @@ document.querySelectorAll(".level-link").forEach((element) => {
 					currentSection = i;
 				}
 			}
-			genAnswer(level,1);
-			
+			genAnswer(level, 1);
+
 		} else {
 			currentSection = level;
-			genAnswer(Object.keys(puzzles)[Number(level)],1);
-			
+			genAnswer(Object.keys(puzzles)[Number(level)], 1);
+
 		}
 		problemP.innerHTML = "Problem 1";
 		backBtn.classList.add("hide");
-		
+
 	});
 });
 omegaBtn.addEventListener("click", () => {

@@ -14,9 +14,9 @@ $blue-box: rgb(29, 41, 207);
 $navy-box: rgb(25, 10, 100);
 $purple-box: rgb(100, 20, 120);
 $magenta-box: rgb(255, 0, 255);
-$lavender-box: rgb(186, 114, 181);
+$lavender-box: rgb(205, 155, 201);
 $gray-box: rgb(100, 100, 100);
-$white-box: rgb(210, 210, 210);
+$white-box: rgb(210, 210, 210); 
 $chroma-box: linear-gradient(45deg, $red-box, $orange-box, $yellow-box, $lime-box, $blue-box, $purple-box, $magenta-box);
 
 * {
@@ -29,6 +29,15 @@ $chroma-box: linear-gradient(45deg, $red-box, $orange-box, $yellow-box, $lime-bo
 
 @mixin checker-block($color1, $color2) {
 	background: repeating-conic-gradient($color2 0% 25%, $color1 0% 50%) 50% / 100px 100px;
+}
+
+@mixin large-block() {
+	width: 200px !important;
+	height: 200px !important;
+	&>.sub-box {
+		width: 170px !important;
+		height: 170px !important;
+	}
 }
 
 .hide {
@@ -52,11 +61,21 @@ $chroma-box: linear-gradient(45deg, $red-box, $orange-box, $yellow-box, $lime-bo
 	align-items: center;
 	justify-content: center;
 
+	&.box-large {
+		width: 200px;  // Assuming you want the parent box to be larger too
+		height: 200px;
+
+		.sub-box {
+			width: 170px !important;
+			height: 170px !important;
+		}
+	}
+
 	&>.sub-box {
 		width: 85px;
 		height: 85px;
-		max-width: 85px;
-		max-height: 85px;
+		max-width: 170px;
+		max-height: 170px;
 		background: rgb(50, 50, 50);
 		color: white;
 		vertical-align: middle;
@@ -71,6 +90,11 @@ $chroma-box: linear-gradient(45deg, $red-box, $orange-box, $yellow-box, $lime-bo
 			display: table-cell;
 		}
 	}
+	
+}
+
+.box-large {
+	@include large-block();
 }
 
 .box {
@@ -159,6 +183,18 @@ $chroma-box: linear-gradient(45deg, $red-box, $orange-box, $yellow-box, $lime-bo
 .box-half {
 	&-blue-black {
 		@include half-block($blue-box, $black-box);
+	}
+	&-yellow-red {
+		@include half-block($yellow-box, $red-box);
+	}
+	&-purple-white {
+		@include half-block($purple-box, $white-box);
+	}
+	&-purple-blue {
+		@include half-block($purple-box, $blue-box);
+	}
+	&-black-gray {
+		@include half-block($black-box, $gray-box);
 	}
 }
 

@@ -23,11 +23,19 @@
   align-items: center;
   justify-content: center;
 }
+.normal-box.box-large {
+  width: 200px;
+  height: 200px;
+}
+.normal-box.box-large .sub-box {
+  width: 170px !important;
+  height: 170px !important;
+}
 .normal-box > .sub-box {
   width: 85px;
   height: 85px;
-  max-width: 85px;
-  max-height: 85px;
+  max-width: 170px;
+  max-height: 170px;
   background: rgb(50, 50, 50);
   color: white;
   vertical-align: middle;
@@ -40,6 +48,15 @@
 .normal-box > .sub-box > * {
   vertical-align: middle;
   display: table-cell;
+}
+
+.box-large {
+  width: 200px !important;
+  height: 200px !important;
+}
+.box-large > .sub-box {
+  width: 170px !important;
+  height: 170px !important;
 }
 
 .box-black {
@@ -92,7 +109,7 @@
   background: rgb(255, 0, 255);
 }
 .box-lavender {
-  background: rgb(186, 114, 181);
+  background: rgb(205, 155, 201);
 }
 .box-gray {
   background: rgb(100, 100, 100);
@@ -106,6 +123,15 @@
 
 .box-half-blue-black {
   background: linear-gradient(90deg, rgb(29, 41, 207) 50%, rgb(0, 0, 0) 50%);
+}
+.box-half-yellow-red {
+  background: linear-gradient(90deg, rgb(255, 255, 0) 50%, rgb(171, 0, 0) 50%);
+}
+.box-half-purple-white {
+  background: linear-gradient(90deg, rgb(100, 20, 120) 50%, rgb(210, 210, 210) 50%);
+}
+.box-half-purple-blue {
+  background: linear-gradient(90deg, rgb(100, 20, 120) 50%, rgb(29, 41, 207) 50%);
 }
 
 .box-checker-blue-black {

@@ -103,6 +103,45 @@ puzzles = {
         problem10: "box[class='box-yellow',given='uh liveliest',answer='the illusive',pos='1:1']",
     },
     "The Blooming": {
+        problem1: "box[class='box-white',given='goblin +↗',answer='orchid',pos='0:2']||box[class='box-red',given='hide',pos='1:1']",
+        problem2: "box[class='box-purple',given='hose',pos='1:1']||box[class='box-yellow',given='sero',answer='rose',pos='0:1']",
+        problem3: "box[class='box-purple',given='silly',pos='0:0']||box[class='box-black',given='ylil',answer='lily',pos='1:1']",
+        problem4: "box[class='box-purple',given='hazy',answer='daisy',pos='0:0']",
+        problem5: "box[class='box-gray',given='purple + white',answer='lavender',pos='0:2']||box[class='box-navy',given='You will actually see this later on!',pos='1:1']",
+        problem6: "box[class='box-white',given='sun +→',answer='sunflower',pos='0:1']||box[class='box-gray',given='theme',pos='1:1']",
+        problem7: "box[class='box-gray',given='roald',pos='0:1']||box[class='box-red',given='ida',answer='dahlia',pos='1:1']",
+        problem8: "box[class='box-purple',given='sloppy',answer='poppy',pos='1:1']",
+        problem9: "box[class='box-yellow',given='loon pie',answer='lupine',pos='1:0']",
+        problem10: "box[class='box-gray',given='minecraft',answer='azalea',pos='1:1']",
+        problem11: "box[class='box-purple',given='the glooming',answer='the blooming',pos='1:1']",
+    },
+    "The Educated": {
+        problem1: "box[class='box-large',class='box-half-black-gray',given='mental theme',answer='physical education',pos='0:1']",
+        problem2: "box[class='box-purple',given='curled mystery',answer='world history',pos='0:0']",
+        problem3: ""
+    },
+    "The Analytical": {
+        problem1: "box[class='box-purple',given='audition',answer='addition',pos='1:1']||box[class='box-blue',given='add',pos='0:1']",
+        problem2: "box[class='box-yellow',given='shun track +↘',answer='subtraction',pos='1:0']||box[class='box-black',given='bus',pos='2:1']",
+        problem3: "box[class='box-purple',given='complication',answer='multiplication',pos='1:1']",
+        problem4: "box[class='box-purple',given='visionary',answer='division',pos='1:2']",
+        problem5: "box[class='box-red',given='module +↘',answer='modulus',pos='1:1']||box[class='box-black',given='they',pos='2:2']",
+        problem6: "box[class='box-white',given='algae +↘',answer='algebra',pos='1:0']||box[class='box-red',given='bracket',pos='2:1']",
+        problem7: "box[class='box-large',class='box-half-yellow-red',given='cambion prehistorics',answer='combinatorics',pos='0:1']",
+        problem8: "box[class='box-red',given='calcium lustful',answer='calculus',pos='1:1']",
+        problem9: "box[class='box-blue',given='at +→',answer='statistics',pos='0:1']||box[class='box-yellow',given='i cists',pos='1:1']", //istics
+        problem10: "box[class='box-purple',given='slumber +↘',answer='number theory',pos='0:1']||box[class='box-white',given='thesis',pos='1:2']",
+        problem11: "box[class='box-large',class='box-half-purple-blue',given='beware rot',answer='square root',pos='0:0']",
+        problem12: "box[class='box-purple',given='laugh',answer='graph',pos='0:0']",
+        problem13: "box[class='box-red',given='integrity allocations',answer='integrals',pos='1:1']",
+        problem14: "box[class='box-purple',given='potents →',answer='exponents',pos='0:1']||box[class='box-blue',pos='1:1']",
+        problem15: "box[class='box-red',given='baracks ketamines',answer='brackets',pos='0:1']",
+        problem16: "box[class='box-white',given='the systematic',answer='the analytical',pos='0:2']||box[class='box-blue','canal ethyl it',pos='1:1']",
+    },
+    "The Geometric": {
+
+    },
+    "The Esoteric": {
 
     },
     "The Omniscient": {
@@ -112,6 +151,15 @@ puzzles = {
         problem1: "box[class='box-black',given='goodbye',answer='hi',pos='1:1']",
     },
     "The Antique": {
+
+    },
+    "The Wanderer": {
+
+    },
+    "The Acolyte": {
+
+    },
+    "The Surreal": {
 
     },
     "The Transparent": {
